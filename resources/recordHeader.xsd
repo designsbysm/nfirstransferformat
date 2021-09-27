@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://validate.rmzfire.com" targetNamespace="http://validate.rmzfire.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:group name="RecordHeader">
+    <xs:sequence>
+      <xs:element name="FireDepartmentID" type="FireDepartmentID" />
+      <xs:element name="FireDepartmentState" type="State" />
+      <xs:element name="AlarmDate" type="AlarmDate" />
+      <xs:element name="IncidentNumber" type="IncidentNumber" />
+      <xs:element name="ExposureNumber" type="ExposureNumber" />
+      <xs:element name="RecordType" type="RecordType" />
+      <xs:element name="TransactionType" type="TransactionType" />
+    </xs:sequence>
+  </xs:group>
+</xs:schema>
