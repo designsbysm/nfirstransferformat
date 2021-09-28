@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:group name="Wildland">
+    <xs:sequence>
+      <xs:element name="Wildland" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This transaction record contains all the information captured on the Wildland Form.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="RecordHeader" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

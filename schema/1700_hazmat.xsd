@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:include schemaLocation="1710_chemicals.xsd" />
+  <xs:include schemaLocation="1720_mobile_property.xsd" />
+  <xs:include schemaLocation="1730_equipment_invloved.xsd" />
+  <xs:group name="HazMat">
+    <xs:sequence>
+      <xs:element name="HazMat" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This transaction record contains the information gathered for the first hazardous material in an incident.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="RecordHeader" />
+            <xs:group ref="Chemicals" />
+            <xs:group ref="HazMatMobileProperty" />
+            <xs:group ref="HazMatEquipmentInvloved" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

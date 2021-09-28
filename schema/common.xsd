@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://validate.rmzfire.com" targetNamespace="http://validate.rmzfire.com" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
   <xs:simpleType name="AlarmDate">
-    <xs:restriction base="xs:string">
-      <xs:length value="8" />
+    <xs:restriction base="xs:int">
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="ExposureNumber">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0"></xs:minInclusive>
+      <xs:maxInclusive value="999"></xs:maxInclusive>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="FieldDelimiter">
     <xs:restriction base="xs:string">
-      <xs:length value="3" />
+      <xs:length value="1" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="FireDepartmentID">
@@ -15,18 +20,27 @@
       <xs:length value="5" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="IncidentNumber">
+  <xs:simpleType name="FireDepartmentStation">
     <xs:restriction base="xs:string">
-      <xs:length value="7" />
+      <xs:length value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IncidentNumber">
+    <xs:restriction base="xs:int">
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="NFIRSVersion">
+    <xs:restriction base="xs:float">
+      <xs:enumeration value="5.0" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="RecordType">
     <xs:annotation>
       <xs:documentation>NFIRS Transaction ID</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:minLength value="4" />
-      <xs:maxLength value="5" />
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="1000"></xs:minInclusive>
+      <xs:maxInclusive value="1920"></xs:maxInclusive>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="State">
@@ -42,7 +56,7 @@
       <xs:enumeration value="DC" />
       <xs:enumeration value="FL" />
       <xs:enumeration value="GA" />
-      <xs:enumeration value="HI" />
+<xs:enumeration value="HI" />
       <xs:enumeration value="ID" />
       <xs:enumeration value="IL" />
       <xs:enumeration value="IN" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:group name="Basic">
+    <xs:sequence>
+      <xs:element name="Basic">
+        <xs:annotation>
+          <xs:documentation>This transaction record contains the majority of the coded information contained on the Basic Form.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="RecordHeader" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

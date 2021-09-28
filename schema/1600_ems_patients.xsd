@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:group name="EMSPatients">
+    <xs:sequence>
+      <xs:element name="EMSPatients">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="EMSPatient" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>These transaction records contain the information captured on the EMS Form.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:group ref="RecordHeader" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

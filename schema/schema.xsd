@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified" id="NFIRSIncident">
+
+  <xs:include schemaLocation="1000_incident_header.xsd" />
+  <xs:include schemaLocation="1005_basic.xsd" />
+  <xs:include schemaLocation="1010_address.xsd" />
+  <xs:include schemaLocation="1020_aid_given_received.xsd" />
+  <xs:include schemaLocation="1030_officer_in_charge.xsd" />
+  <xs:include schemaLocation="1035_reporting_member.xsd" />
+  <xs:include schemaLocation="1040_remarks.xsd" />
+  <xs:include schemaLocation="1050_persons_involved.xsd" />
+  <xs:include schemaLocation="1055_owner.xsd" />
+  <xs:include schemaLocation="1060_special_studies.xsd" />
+  <xs:include schemaLocation="1100_fire.xsd" />
+  <xs:include schemaLocation="1200_structure_fire.xsd" />
+  <xs:include schemaLocation="1300_wildland.xsd" />
+  <xs:include schemaLocation="1400_civilian_casualties.xsd" />
+  <xs:include schemaLocation="1500_fire_service_causualties.xsd" />
+  <xs:include schemaLocation="1600_ems_patients.xsd" />
+  <xs:include schemaLocation="1700_hazmat.xsd" />
+  <xs:include schemaLocation="1800_apparatuses.xsd" />
+  <xs:include schemaLocation="1900_arson.xsd" />
+  <xs:element name="NFIRSIncident">
+    <xs:annotation>
+      <xs:documentation>NFIRS v5.0 Incident data generated for validation</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="IncidentHeader" />
+        <xs:group ref="Basic" />
+        <xs:group ref="Address" />
+        <xs:group ref="AidGivenAndReceived" />
+        <xs:group ref="OfficerInCharge" />
+        <xs:group ref="ReportingMember" />
+        <xs:group ref="Remarks" />
+        <xs:group ref="PersonsInvloved" />
+        <xs:group ref="Owner" />
+        <xs:group ref="SpecialStudies" />
+        <xs:group ref="Fire" />
+        <xs:group ref="StructureFire" />
+        <xs:group ref="Wildland" />
+        <xs:group ref="CivilianCasualties" />
+        <xs:group ref="FireServiceCausualties" />
+        <xs:group ref="EMSPatients" />
+        <xs:group ref="HazMat" />
+        <xs:group ref="Apparatuses" />
+        <xs:group ref="Arson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

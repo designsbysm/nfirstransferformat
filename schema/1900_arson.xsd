@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:group name="Arson">
+    <xs:sequence>
+      <xs:element name="Arson" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>This transaction record contains the information gathered as part of the Federal Arson Module.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="RecordHeader" />
+            <xs:element name="AgencyReferral" minOccurs="0" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>This transaction record contains information regarding any Agency Referrals.</xs:documentation>
+              </xs:annotation>
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:group ref="RecordHeader" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="JuvenileSubjects" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="JuvenileSubject" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation>
+                      <xs:documentation>This transaction record contains the information gathered on each Juvenile Subject as part of the Arson Module.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:group ref="RecordHeader" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>

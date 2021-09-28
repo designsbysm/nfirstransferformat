@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://designsbysm.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://designsbysm.com" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:include schemaLocation="common.xsd" />
+  <xs:include schemaLocation="record_header.xsd" />
+  <xs:group name="IncidentHeader">
+    <xs:sequence>
+      <xs:element name="FieldDelimiter" type="FieldDelimiter" />
+      <xs:element name="VendorID" type="xs:string" />
+      <xs:element name="SoftwareID" type="xs:string" />
+      <xs:element name="Header">
+        <xs:annotation>
+          <xs:documentation>This transaction record contains the information collected as part of Section A. This record is the sole transaction required for No Activity incidents.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:group ref="RecordHeader" />
+            <xs:element name="FireDepartmentStation" type="FireDepartmentStation" />
+            <xs:element name="NFIRSVersion" type="NFIRSVersion" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+</xs:schema>
